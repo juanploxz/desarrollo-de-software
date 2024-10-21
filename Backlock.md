@@ -30,4 +30,4 @@ A realizar:
   - Funcionamiento parcial de la aplicacion
   - Funcionamiento total de la aplicacion
  
-- Trabajo completado (presentacion)
+- Funcionamiento total del proyecto (presentacion)
