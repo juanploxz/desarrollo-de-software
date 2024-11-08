@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Prototipo extends JFrame {
+    // Declaración de componentes
     private JButton botonInstrucciones;
     private JButton botonDatosUsuario;
     private JButton botonRecordarDatos;
@@ -19,6 +20,7 @@ public class Prototipo extends JFrame {
     private JTextField inputPeso;
     private JTextField inputUsuario;
 
+    // Mapa para almacenar los datos de los usuarios
     private Map<String, String> datosUsuario = new HashMap<>();
 
     public Prototipo() {
@@ -36,7 +38,7 @@ public class Prototipo extends JFrame {
         inputPeso = new JTextField(20);
         inputUsuario = new JTextField(20);
 
-        // Set components properties
+        // Establecer propiedades de los componentes
         botonInstrucciones.setToolTipText("Imprimir Instrucciones");
         botonDatosUsuario.setToolTipText("Enviar Datos Usuario");
         botonRecordarDatos.setToolTipText("Recordar Datos");
@@ -44,7 +46,7 @@ public class Prototipo extends JFrame {
         botonGuardarDatos.setToolTipText("Guardar Datos del Usuario");
         botonVerUsuarios.setToolTipText("Ver Usuarios Registrados");
 
-        // Establecer colores de fondo
+        // Establecer colores de fondo para los campos de texto y botones
         inputNombre.setBackground(Color.LIGHT_GRAY);
         inputEdad.setBackground(Color.LIGHT_GRAY);
         inputCarbohidratos.setBackground(Color.LIGHT_GRAY);
@@ -64,7 +66,7 @@ public class Prototipo extends JFrame {
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        // Añadir componentes al panel
+        // Añadir componentes al panel con GridBagLayout
         gbc.gridx = 0;
         gbc.gridy = 0;
         panel.add(new JLabel("Usuario:"), gbc);
@@ -132,7 +134,7 @@ public class Prototipo extends JFrame {
         // Añadir panel al frame
         add(panel);
 
-        // Add action listeners for buttons
+        // Añadir ActionListeners a los botones
         botonInstrucciones.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 imprimirInstrucciones();
@@ -203,7 +205,7 @@ public class Prototipo extends JFrame {
         JOptionPane.showMessageDialog(this, "Por favor, ingrese las calorías consumidas de cada comida separadas por espacios.");
     }
 
-    // Método para enviar la cantidad de calorías consumidas
+    // Método para calcular el total de calorías consumidas
     private int calcularCaloriasConsumidas(String input) {
         String[] caloriasStr = input.split(" ");
         int totalCalorias = 0;
@@ -225,6 +227,7 @@ public class Prototipo extends JFrame {
     }
 
     public static void main(String[] args) {
+        // Crear una instancia de la clase Prototipo y mostrar la interfaz
         new Prototipo();
     }
 }
